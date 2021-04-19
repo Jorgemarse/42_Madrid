@@ -1,0 +1,5 @@
+Credentials cache: API:1944228C-8F7C-415F-897C-BAA7789D5403
+        Principal: jormarti@42MADRID.COM
+
+  Issued                Expires             Flags    Principal
+Apr  5 18:31:04 2021  Apr  6 04:31:04 2021  FPRIA  krbtgt/42MADRID.COM@42MADRID.COM
