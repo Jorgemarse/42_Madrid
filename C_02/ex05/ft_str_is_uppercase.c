@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 17:18:24 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/21 18:12:02 by jormarti         ###   ########.fr       */
+/*   Created: 2021/04/20 11:57:01 by jormarti          #+#    #+#             */
+/*   Updated: 2021/04/21 18:22:09 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include<stdio.h>	
 
-int	ft_str_is_numeric(char *str)
+int	ft_str_is_uppercase(char *str)
 {
 	int	i;
 	int	cont;
 
-	cont = 0;
 	i = 0;
+	cont = 0;
 	if (str[0] == '\0')
 		cont = 1;
 	while (str[i] != '\0')
 	{
-		if (str[i] > 47 && str[i] < 58)
+		if (str[i] > 64 && str[i] < 91)
 			cont = 1;
 		else
 		{
@@ -35,12 +35,12 @@ int	ft_str_is_numeric(char *str)
 	return (cont);
 }
 
-/*int	main(void)
+/*int	main (void)
 {
-	char	text[50] = "5555555";
 	int i;
+	char *text = "HOLA";
 
-	i = ft_str_is_numeric(text);
+	i = ft_str_is_uppercase(text);
 	printf("%d\n", i);
-	return(0);
+	return (0);
 }*/

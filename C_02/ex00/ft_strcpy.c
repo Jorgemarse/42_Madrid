@@ -6,7 +6,7 @@
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 17:00:39 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/19 13:04:29 by jormarti         ###   ########.fr       */
+/*   Updated: 2021/04/21 11:49:33 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(src[i] != '\0')
+	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
@@ -36,4 +36,3 @@ char	*ft_strcpy(char *dest, char *src)
 	printf("%s\n", text2);
 	return (0);
 }*/
-

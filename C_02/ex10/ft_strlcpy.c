@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 17:18:24 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/21 18:12:02 by jormarti         ###   ########.fr       */
+/*   Created: 2021/04/21 13:54:40 by jormarti          #+#    #+#             */
+/*   Updated: 2021/04/21 19:39:40 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 
-int	ft_str_is_numeric(char *str)
+unsigned int	ft_strlcpy (char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	cont;
+	unsigned int	i;
+	unsigned int	b;
 
-	cont = 0;
 	i = 0;
-	if (str[0] == '\0')
-		cont = 1;
-	while (str[i] != '\0')
+	b = 0;
+	while (src[b] != '\0')
+		b++;
+	if (size > 0)
 	{
-		if (str[i] > 47 && str[i] < 58)
-			cont = 1;
-		else
+		while (src[i] != '\0' && i < (size - 1))
 		{
-			cont = 0;
-			return (cont);
+			dest[i] = src[i];
+			i++;
 		}
-		i++;
+		dest[i] = '\0';
 	}
-	return (cont);
+	return (b);
 }
 
-/*int	main(void)
+/*int main (void)
 {
-	char	text[50] = "5555555";
-	int i;
+	char source[] = "Hola mundo";
+	char destination[] = "";
+	int	i;
 
-	i = ft_str_is_numeric(text);
+	i = ft_strlcpy(destination, source, 4);
 	printf("%d\n", i);
-	return(0);
+	return (0);
 }*/

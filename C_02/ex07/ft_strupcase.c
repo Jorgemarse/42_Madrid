@@ -1,46 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/19 17:18:24 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/21 18:12:02 by jormarti         ###   ########.fr       */
+/*   Created: 2021/04/20 16:07:51 by jormarti          #+#    #+#             */
+/*   Updated: 2021/04/21 11:27:20 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include<stdio.h>	
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strupcase(char *str)
 {
 	int	i;
-	int	cont;
 
-	cont = 0;
 	i = 0;
-	if (str[0] == '\0')
-		cont = 1;
 	while (str[i] != '\0')
 	{
-		if (str[i] > 47 && str[i] < 58)
-			cont = 1;
-		else
+		if (str[i] > 96 && str[i] < 123)
 		{
-			cont = 0;
-			return (cont);
+			str[i] = str[i] - 32;
 		}
 		i++;
 	}
-	return (cont);
+	return (str);
 }
 
 /*int	main(void)
 {
-	char	text[50] = "5555555";
-	int i;
-
-	i = ft_str_is_numeric(text);
-	printf("%d\n", i);
-	return(0);
+	char	text[] = "hola mundo";
+	char	*i;
+	
+	i = ft_strupcase(text);
+	printf("%s\n", i);
+	return (0);
 }*/
