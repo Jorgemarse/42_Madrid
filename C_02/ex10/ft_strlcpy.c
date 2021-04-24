@@ -6,7 +6,7 @@
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/21 13:54:40 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/21 19:39:40 by jormarti         ###   ########.fr       */
+/*   Updated: 2021/04/22 19:18:34 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,6 @@ unsigned int	ft_strlcpy (char *dest, char *src, unsigned int size)
 
 	i = ft_strlcpy(destination, source, 4);
 	printf("%d\n", i);
+	printf("%s", destination);
 	return (0);
 }*/

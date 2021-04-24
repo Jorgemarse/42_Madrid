@@ -6,7 +6,7 @@
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 13:38:06 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/21 19:29:49 by jormarti         ###   ########.fr       */
+/*   Updated: 2021/04/22 13:16:43 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_str_is_printable(char *str)
 		cont = 1;
 	while (str[i] != '\0')
 	{
-		if (str[i] > 32 && str[i] < 127)
+		if (str[i] > 31 && str[i] < 127)
 			cont = 1;
 		else
 		{
@@ -38,7 +38,7 @@ int	ft_str_is_printable(char *str)
 /*int main (void)
 {
 	int	i;
-	char *text = "hola";
+	char *text = "ho234!$&&:;}{~_LK";
 
 	i = ft_str_is_printable(text);
 	printf("%d\n", i);

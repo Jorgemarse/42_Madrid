@@ -1,47 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/21 16:02:05 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/23 12:13:30 by jormarti         ###   ########.fr       */
+/*   Created: 2021/04/22 13:34:06 by jormarti          #+#    #+#             */
+/*   Updated: 2021/04/22 15:55:13 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 #include<string.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strcat(char *dest, char *src)
 {
-	unsigned int	i;
+	int	i;
+	int	j;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	j = 0;
+	while (dest[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
 		i++;
 	}
-	if (i != n)
-		return (s1[i] - s2[i]);
-	return (0);
+	while (src[j] != '\0')
+	{
+		dest[i] = src [j];
+		j++;
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*int main (void)
 {
-	char	text1[50] = "";
-	char	text2[50] = "Hola mundo";
-	int	i;
-	int	j;
+	char textmio[50] = "hola";
+	char textfunc[50] = "hola";
+	char text2[50] = "adios";
+	char *aux;
 
-	i = ft_strncmp(text1, text2, 3);
-	j = strncmp(text1, text2, 3);
-	printf("%d\n", i);
-	printf("-------------\n");
-	printf("%d\n", j);
-	return(0);
+
+
+	aux = ft_strcat(textmio, text2);
+	printf("%s\n", aux);
+	printf("-----\n");
+	aux = strcat(textfunc, text2);
+	printf("%s\n", aux);
 }*/

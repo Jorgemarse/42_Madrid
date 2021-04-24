@@ -6,7 +6,7 @@
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 17:00:44 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/21 19:19:02 by jormarti         ###   ########.fr       */
+/*   Updated: 2021/04/24 13:05:11 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ char	*ft_strcapitalize(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[0] > 96 && str[0] < 123)
+		if (i == 0 && str[i] > 96 && str[i] < 123)
 			str[i] = str[i] - 32;
-		else if (str[i] > 64 && str[i] < 91)
+		else if (str[i] > 64 && str[i] < 91 && i != 0)
 			str[i] = str[i] + 32;
 		while (!((str[i] > 64 && str[i] < 91) || (str[i] > 96 && str[i] < 123) || \
-							(str[i] == 32)))
+						(str[i] > 47 && str[i] < 58)))
 		{	
 			i++;
 			if (str[i] > 96 && str[i] < 123)
@@ -35,12 +35,12 @@ char	*ft_strcapitalize(char *str)
 	return (str);
 }
 
-/*int main(void)
+/*int	main (void)
 {
-	char text[] = "hola mUndo ::jorge//////maRtin.serr<ano";
-	char *i;
+	char	text[] = "sAlut,,	 comm2ent ";
+	char	*i;
 
 	i = ft_strcapitalize(text);
-	printf("%s\n", i);
-	return(0);
+	printf ("%s\n", ft_strcapitalize(text));
+	return (0);
 }*/

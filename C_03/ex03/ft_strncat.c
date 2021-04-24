@@ -1,47 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/21 16:02:05 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/23 12:13:30 by jormarti         ###   ########.fr       */
+/*   Created: 2021/04/22 15:57:27 by jormarti          #+#    #+#             */
+/*   Updated: 2021/04/22 16:29:57 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 #include<string.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	j = 0;
+	while (dest[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
 		i++;
 	}
-	if (i != n)
-		return (s1[i] - s2[i]);
-	return (0);
+	while (src[j] != '\0' && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
 }
 
 /*int main (void)
 {
-	char	text1[50] = "";
-	char	text2[50] = "Hola mundo";
-	int	i;
-	int	j;
+	char text0[50] = "Hola";
+	char text1[50] = "Hola";
+	char text2[50] = "Adios";
+	char *aux;
 
-	i = ft_strncmp(text1, text2, 3);
-	j = strncmp(text1, text2, 3);
-	printf("%d\n", i);
-	printf("-------------\n");
-	printf("%d\n", j);
+	aux = ft_strncat(text0, text2, 3);
+	printf("%s\n", aux);
+	printf("-----\n");
+	aux = strncat(text1, text2, 3);
+	printf("%s\n", aux);
 	return(0);
 }*/
