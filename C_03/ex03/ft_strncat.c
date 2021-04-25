@@ -27,18 +27,18 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	while (src[j] != '\0' && j < nb)
 	{
 		dest[i] = src[j];
-		i++;
 		j++;
+		i++;
 	}
-	dest[i + j] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
 
 /*int main (void)
 {
-	char text0[50] = "Hola";
-	char text1[50] = "Hola";
-	char text2[50] = "Adios";
+	char text0[50] = "42dfe l33r";
+	char text1[50] = "42dfe l33r";
+	char text2[50] = "do";
 	char *aux;
 
 	aux = ft_strncat(text0, text2, 3);

@@ -47,14 +47,15 @@ unsigned int	ft_strlcat (char *dest, char *src, unsigned int size)
 
 /*int main (void)
 {
-	char	text1[200] = "Hola";
-	char	text2[200] = "";
+	char	text1[50] = "";
+	char	text2[50] = "Adios";
+	char	text0[50] = "";
 	int 	aux;
 
-	aux = ft_strlcat(text1, text2, 3);
+	aux = ft_strlcat(text1, text2, 8);
 	printf("%d\n%s\n", aux, text1);
 	printf("-----\n");
-	aux = strlcat(text1, text2, 3);
+	aux = strlcat(text0, text2, 8);
 	printf("%d\n%s\n", aux, text1);
 	return(0);
 }*/
