@@ -1,45 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jormarti <jormarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 13:23:56 by jormarti          #+#    #+#             */
-/*   Updated: 2021/04/23 14:01:23 by jormarti         ###   ########.fr       */
+/*   Created: 2021/04/25 16:32:53 by jormarti          #+#    #+#             */
+/*   Updated: 2021/04/25 18:05:12 by jormarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-#include<unistd.h>
+#include<stdlib.h>
 
-void	ft_putnbr(int nb)
+int	ft_atoi (char *str)
 {
-	unsigned int	n;
-	char			a;
+	int	N;
+	int	nbr;
 
-	if (nb < 0)
+	nbr = 0;
+	N = 0;
+	while (*str == 32 || (*str >= 9 && *str <= 13))
+		str++;
+	while (*str == '-' || *str == '+')
 	{
-		a = '-';
-		write(1, &a, 1);
-		nb = nb * (-1);
+		if (*str == '-')
+			N++;
+		str++;
 	}
-	n = nb;
-	if (n >= 10)
+	while (*str >= '0' && *str <= '9')
 	{
-		ft_putnbr(n / 10);
-		a = '0' + (n % 10);
-		write(1, &a, 1);
+		nbr *= 10;
+		nbr += (int)*str - '0';
+		str++;
 	}
-	else
-	{
-		a = '0' + n;
-		write(1, &a, 1);
-	}
+	if (N % 2 != 0)
+		nbr = nbr * (-1);
+	return (nbr);
 }
 
 /*int main (void)
 {
-	ft_putnbr(2147483647);
+	char text[] = " ---+--+1234ab567";	
+	int aux;
+	
+	aux = ft_atoi (text);
+	printf("%d\n", aux);
 	return(0);
 }*/
